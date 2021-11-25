@@ -1,0 +1,665 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="../Libraries/Content/bootstrap.css" rel="stylesheet" />
+    <link href="../CSS/main.css" rel="stylesheet" />
+    <script src="../Libraries/Scripts/jquery-3.0.0.js"></script>
+    <script src="../Libraries/Scripts/bootstrap.js"></script>
+    <script src="../Libraries/Scripts/umd/popper.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="justify-content-center mb-0">
+                    <div class="container text-white-50 text-md-center">
+                        <h1><strong>Assignments per Course</strong></h1>
+                        <img src="../Assets/images/AssignmentsPerCourse.jpg" width="100" />
+                        <p><strong>Here you can add,pair or delete an Assignment within the Course's values</strong></p>
+                    </div>
+                    <nav class="navbar navbar-expand-sm bg-dark">
+
+                        <!-- Links -->
+                        <ul class="navbar-nav align-content-lg-center">
+                            <li class="nav-item">
+                                <a class="nav-link" href="Courses.html">Courses</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Trainers.html">Trainers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Students.html">Students</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Assignments.html">Assignment</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Trainers Per Course.html">Trainers Per Course</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Assignments Per Course.html">Assignments Per Course</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Assignments Per Students-Per Course.html">Assignment Per Course Per Students</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Index.html">Return to Home Screen</a>
+                            </li>
+                        </ul>
+
+                    </nav>
+                    <br />
+                    <div class="row">
+                        <div class="col-left">
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal2">
+                                Add Assignments per Course
+                            </button>
+                            <!-- The Modal -->
+                            <div class="modal" id="myModal2">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <!-- Modal-Header -->
+                                        <div class="modal-header">
+                                            <h2 class="modal-title">Add Assignments per Course</h2>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <!-- Modal-body -->
+                                        <form>
+                                            <div class="modal-body">
+                                                <strong>Course's Title:</strong>
+                                                <input type="text" name="courseTitle" placeholder="Give Course's Title*" required pattern="[a-zA-Z-#]+" autocomplete="off" />
+                                                <hr />
+                                                <strong>Course's Stream:</strong>
+                                                <select required size="5" class="custom-select">
+                                                    <option>CB-7</option>
+                                                    <option>CB-8</option>
+                                                    <option>CB-9</option>
+                                                    <option>CB-10</option>
+                                                    <option>CB-11</option>
+                                                </select>
+                                                <hr />
+                                                <strong>Course's Type:</strong>
+                                                <select required size="2" class="custom-select">
+                                                    <option>Part Time</option>
+                                                    <option>Full Time</option>
+                                                </select>
+                                                <hr />
+                                                <strong>Existing Assignments:</strong>
+                                                <select required multiple class="custom-select" size="5">
+                                                    <option>J-Query Modern Techniques</option>
+                                                    <option>React's new Methods 2021</option>
+                                                    <option>Javascript's Lamda Expressions</option>
+                                                    <option>Angular-evaluations</option>
+                                                    <option>R-Splus Statistic Tables</option>
+                                                </select>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <h4>Add an existing Assignment per Course .You can choose more than one Assignment per Course.</h4>
+                                                <br />
+                                                <button type="submit" class="btn btn-success">Confirm</button>
+                                                <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal3">
+                                Pair Assignment per Course
+                            </button>
+                            <!-- The Modal -->
+                            <div class="modal" id="myModal3">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <!-- Modal-Header -->
+                                        <div class="modal-header">
+                                            <h3 class="modal-title">Pair existing Assignments per Course</h3>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <!-- Modal-body -->
+                                        <form>
+                                            <div class="modal-body">
+                                                <strong>Existing Assignments:</strong>
+                                                <select required multiple class="custom-select" size="5">
+                                                    <option>J-Query Modern Techniques</option>
+                                                    <option>React's new Methods 2021</option>
+                                                    <option>Javascript's Lamda Expressions</option>
+                                                    <option>Angular-evaluations</option>
+                                                    <option>R-Splus Statistic Tables</option>
+                                                </select>
+                                                <hr />
+                                                <strong>Existing Courses:</strong>
+                                                <select required multiple class="custom-select" size="5">
+                                                    <option value="C#">C#</option>
+                                                    <option value="Javascript">Javascript</option>
+                                                    <option value="Java">Java</option>
+                                                    <option value="Python">Python</option>
+                                                    <option value="R-Splus">R-Splus</option>
+                                                </select>
+                                                <hr />
+                                                <strong>Type:</strong>
+                                                <select required size="2" class="custom-select">
+                                                    <option>Part Time</option>
+                                                    <option>Full Time</option>
+                                                </select>
+                                                <hr />
+                                                <strong>Streams:</strong>
+                                                <select required size="5" class="custom-select">
+                                                    <option>CB-7</option>
+                                                    <option>CB-8</option>
+                                                    <option>CB-9</option>
+                                                    <option>CB-10</option>
+                                                    <option>CB-11</option>
+
+                                                </select>
+
+                                            </div>
+
+                                            <!-- Modal footer -->
+                                            <div class="modal-footer">
+                                                <h4>Pair an existing Assignment per Course .You can choose more than one Assignment and Course.</h4>
+                                                <br />
+                                                <button type="submit" class="btn btn-success">Confirm</button>
+                                                <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Table of Assignments per Courses -->
+                        <table class="table table-dark">
+                            <thead>
+                                <tr>
+                                    <th>TITLE</th>
+                                    <th>STREAM</th>
+                                    <th>TYPE</th>
+                                    <th>ASSIGNMENTS</th>
+                                    <th>CHANGE</th>
+                                </tr>
+                                <!--Assignments per Courses Assets-->
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Python</td>
+                                    <td>CB-11</td>
+                                    <td>Full Time</td>
+                                    <td>
+                                        J-Query Modern Techniques
+                                        <br />
+                                        React's new Methods 2021
+                                        <br />
+                                        Angular-evaluations
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditAssignmentPerCourse1">
+                                            Edit
+                                        </button>
+                                        <!-- The Modal -->
+                                        <div class="modal" id="myEditAssignmentPerCourse1">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <!-- Modal-Header -->
+                                                    <div class="modal-header">
+                                                        <h3 class="modal-title">Edit an Assignment with a Course</h3>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <!-- Modal-body -->
+                                                    <form>
+                                                        <div class="modal-body">
+
+                                                            <div class="modal-body">
+                                                                <strong>Course's Title:</strong>
+                                                                <input type="text" name="courseTitle" value="Python" required pattern="[a-zA-Z-#]+" autocomplete="off" />
+                                                                <hr />
+                                                                <strong>Course's Stream:</strong>
+                                                                <select required size="5" class="custom-select">
+                                                                    <option>CB-7</option>
+                                                                    <option>CB-8</option>
+                                                                    <option>CB-9</option>
+                                                                    <option>CB-10</option>
+                                                                    <option selected>CB-11</option>
+                                                                </select>
+                                                                <hr />
+                                                                <strong>Course's Type:</strong>
+                                                                <select required size="2" class="custom-select">
+                                                                    <option>Part Time</option>
+                                                                    <option selected>Full Time</option>
+                                                                </select>
+                                                                <hr />
+                                                                <strong>Existing Assignments (selected in bold):</strong>
+                                                                <select required multiple class="custom-select" size="5">
+                                                                    <option selected>J-Query Modern Techniques</option>
+                                                                    <option selected>React's new Methods 2021</option>
+                                                                    <option>Javascript's Lamda Expressions</option>
+                                                                    <option selected>Angular-evaluations</option>
+                                                                    <option>R-Splus Statistic Tables</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <h4>Edit an existing Assignment per Course .You can choose more than one Assignment per Course.</h4>
+                                                            <br />
+                                                            <button type="submit" class="btn btn-success">Confirm</button>
+                                                            <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        </div>
+
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="btn btn-danger" data-toggle="modal" data-target="#myDelete">Delete</a>
+                                        <div class="modal" id="myDelete">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <h1 class="modal-title">Delete this Domain</h1>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <h4>You are about to delete this domain which contains Assignments per Courses permanently with its selected values. Are you sure?</h4>
+                                                        <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Javascript</td>
+                                    <td>CB-10</td>
+                                    <td>Full Time</td>
+                                    <td>
+                                        Angular-evaluations
+                                        <br />
+                                        Javascript's Lamda Expressions
+                                    </td>
+
+                                    <td>
+
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditAssignmentPerCourse2">
+                                            Edit
+                                        </button>
+                                        <!-- The Modal -->
+                                        <div class="modal" id="myEditAssignmentPerCourse2">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <!-- Modal-Header -->
+                                                    <div class="modal-header">
+                                                        <h3 class="modal-title">Edit an Assignment with a Course</h3>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <!-- Modal-body -->
+                                                    <form>
+                                                        <div class="modal-body">
+
+                                                            <div class="modal-body">
+                                                                <strong>Course's Title:</strong>
+                                                                <input type="text" name="courseTitle" value="Javascript" required pattern="[a-zA-Z-#]+" autocomplete="off" />
+                                                                <hr />
+                                                                <strong>Course's Stream:</strong>
+                                                                <select required size="5" class="custom-select">
+                                                                    <option>CB-7</option>
+                                                                    <option>CB-8</option>
+                                                                    <option>CB-9</option>
+                                                                    <option selected>CB-10</option>
+                                                                    <option>CB-11</option>
+                                                                </select>
+                                                                <hr />
+                                                                <strong>Course's Type:</strong>
+                                                                <select required size="2" class="custom-select">
+                                                                    <option>Part Time</option>
+                                                                    <option selected>Full Time</option>
+                                                                </select>
+                                                                <hr />
+                                                                <strong>Existing Assignments (selected in bold):</strong>
+                                                                <select required multiple class="custom-select" size="5">
+                                                                    <option>J-Query Modern Τechniques</option>
+                                                                    <option>React's new Methods 2021</option>
+                                                                    <option selected>Javascript's Lamda Expressions</option>
+                                                                    <option selected>Angular-evaluations</option>
+                                                                    <option>R-Splus Statistic Tables</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <h4>Edit an existing Assignment per Course .You can choose more than one Assignment per Course.</h4>
+                                                            <br />
+                                                            <button type="submit" class="btn btn-success">Confirm</button>
+                                                            <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        </div>
+
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="btn btn-danger" data-toggle="modal" data-target="#myDelete">Delete</a>
+                                        <div class="modal" id="myDelete">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <h1 class="modal-title">Delete this Domain</h1>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <h4>You are about to delete this domain which contains Assignments per Courses permanently with its selected values. Are you sure?</h4>
+                                                        <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>Python</td>
+                                    <td>CB-10</td>
+                                    <td>Part Time</td>
+                                    <td>
+                                        R-Splus Statistic Tables
+                                        <br />
+                                        J-Query Modern Techniques
+                                        <br />
+                                        React's new Methods 2021
+                                        <br />
+                                        Javascript's Lamda Expressions
+                                    </td>
+
+                                    <td>
+
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditAssignmentPerCourse3">
+                                            Edit
+                                        </button>
+                                        <!-- The Modal -->
+                                        <div class="modal" id="myEditAssignmentPerCourse3">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <!-- Modal-Header -->
+                                                    <div class="modal-header">
+                                                        <h3 class="modal-title">Edit an Assignment with a Course</h3>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <!-- Modal-body -->
+                                                    <form>
+                                                        <div class="modal-body">
+
+                                                            <div class="modal-body">
+                                                                <strong>Course's Title:</strong>
+                                                                <input type="text" name="courseTitle" value="Python" required pattern="[a-zA-Z-#]+" autocomplete="off" />
+                                                                <hr />
+                                                                <strong>Course's Stream:</strong>
+                                                                <select required size="5" class="custom-select">
+                                                                    <option>CB-7</option>
+                                                                    <option>CB-8</option>
+                                                                    <option>CB-9</option>
+                                                                    <option selected>CB-10</option>
+                                                                    <option>CB-11</option>
+                                                                </select>
+                                                                <hr />
+                                                                <strong>Course's Type</strong>
+                                                                <select required size="2" class="custom-select">
+                                                                    <option selected>Part Time</option>
+                                                                    <option>Full Time</option>
+                                                                </select>
+                                                                <hr />
+                                                                <strong>Existing Assignments (selected in bold):</strong>
+                                                                <select required multiple size="5" class="custom-select">
+                                                                    <option selected>J-Query Modern Techniques</option>
+                                                                    <option selected>React's new Methods 2021</option>
+                                                                    <option selected>Javascript's Lamda Expressions</option>
+                                                                    <option>Angular-evaluations</option>
+                                                                    <option selected>R-Splus Statistic Tables</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <h4>Edit an existing Assignment per Course .You can choose more than one Assignment per Course.</h4>
+                                                            <br />
+                                                            <button type="submit" class="btn btn-success">Confirm</button>
+                                                            <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        </div>
+
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="btn btn-danger" data-toggle="modal" data-target="#myDelete">Delete</a>
+                                        <div class="modal" id="myDelete">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <h1 class="modal-title">Delete this Domain</h1>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <h4>You are about to delete this domain which contains Assignments per Courses permanently with its selected values. Are you sure?</h4>
+                                                        <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>C#</td>
+                                    <td>CB-9</td>
+                                    <td>Part Time</td>
+                                    <td>
+                                        R-Splus Statistic Tables
+                                        <br />
+                                        Angular-evaluations
+                                    </td>
+
+                                    <td>
+
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditAssignmentPerCourse4">
+                                            Edit
+                                        </button>
+                                        <!-- The Modal -->
+                                        <div class="modal" id="myEditAssignmentPerCourse4">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <!-- Modal-Header -->
+                                                    <div class="modal-header">
+                                                        <h3 class="modal-title">Edit an Assignment with a Course</h3>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <!-- Modal-body -->
+                                                    <form>
+                                                        <div class="modal-body">
+
+                                                            <div class="modal-body">
+                                                                <strong>Course's Title:</strong>
+                                                                <input type="text" name="courseTitle" value="C#" required pattern="[a-zA-Z-#]+" autocomplete="off" />
+                                                                <hr />
+                                                                <strong>Course's Stream:</strong>
+                                                                <select required size="5" class="custom-select">
+                                                                    <option>CB-7</option>
+                                                                    <option>CB-8</option>
+                                                                    <option selected>CB-9</option>
+                                                                    <option>CB-10</option>
+                                                                    <option>CB-11</option>
+                                                                </select>
+                                                                <hr />
+                                                                <strong>Course's Type:</strong>
+                                                                <select required size="2" class="custom-select">
+                                                                    <option selected>Part Time</option>
+                                                                    <option>Full Time</option>
+                                                                </select>
+                                                                <hr />
+                                                                <strong>Existing Assignments (selected in bold):</strong>
+                                                                <select required multiple class="custom-select" size="5">
+                                                                    <option>J-Query Modern Techniques</option>
+                                                                    <option>React's new Methods 2021</option>
+                                                                    <option>Javascript's Lamda Expressions</option>
+                                                                    <option selected>Angular-evaluations</option>
+                                                                    <option selected>R-Splus Statistic Tables</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <h4>Edit an existing Assignment per Course .You can choose more than one Assignment per Course.</h4>
+                                                            <br />
+                                                            <button type="submit" class="btn btn-success">Confirm</button>
+                                                            <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        </div>
+
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="btn btn-danger" data-toggle="modal" data-target="#myDelete">Delete</a>
+                                        <div class="modal" id="myDelete">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <h1 class="modal-title">Delete this Domain</h1>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <h4>You are about to delete this domain which contains Assignments per Courses permanently with its selected values. Are you sure?</h4>
+                                                        <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                <tr>
+                                    <td>Java</td>
+                                    <td>CB-11</td>
+                                    <td>Full Time</td>
+                                    <td>
+                                        React's new Methods 2021
+                                        <br />
+                                        Angular-evaluations
+                                        <br />
+                                        J-Query Modern Techniques
+                                    </td>
+
+                                    <td>
+
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditAssignmentPerCourse5">
+                                            Edit
+                                        </button>
+                                        <!-- The Modal -->
+                                        <div class="modal" id="myEditAssignmentPerCourse5">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <!-- Modal-Header -->
+                                                    <div class="modal-header">
+                                                        <h3 class="modal-title">Edit an Assignment with a Course</h3>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <!-- Modal-body -->
+                                                    <form>
+                                                        <div class="modal-body">
+
+                                                            <div class="modal-body">
+                                                                <strong>Course's Title:</strong>
+                                                                <input type="text" name="courseTitle" value="Java" required pattern="[a-zA-Z-#]+" autocomplete="off" />
+                                                                <hr />
+                                                                <strong>Course's Stream:</strong>
+                                                                <select required size="5" class="custom-select">
+                                                                    <option>CB-7</option>
+                                                                    <option>CB-8</option>
+                                                                    <option>CB-9</option>
+                                                                    <option>CB-10</option>
+                                                                    <option selected>CB-11</option>
+                                                                </select>
+                                                                <hr />
+                                                                <strong>Course's Type:</strong>
+                                                                <select size="2"required class="custom-select">
+                                                                    <option>Part Time</option>
+                                                                    <option selected>Full Time</option>
+                                                                </select>
+                                                                <hr />
+                                                                <strong>Existing Assignments (selected in bold):</strong>
+                                                                <select required multiple class="custom-select" size="5">
+                                                                    <option selected>J-Query Modern Techniques</option>
+                                                                    <option selected>React's new Methods 2021</option>
+                                                                    <option>Javascript's Lamda Expressions</option>
+                                                                    <option selected>Angular-evaluations</option>
+                                                                    <option>R-Splus Statistic Tables</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <h4>Edit an existing Assignment per Course .You can choose more than one Assignment per Course.</h4>
+                                                            <br />
+                                                            <button type="submit" class="btn btn-success">Confirm</button>
+                                                            <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        </div>
+
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="btn btn-danger" data-toggle="modal" data-target="#myDelete">Delete</a>
+                                        <div class="modal" id="myDelete">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <h1 class="modal-title">Delete this Domain</h1>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <h4>You are about to delete this domain which contains Assignments per Courses permanently with its selected values. Are you sure?</h4>
+                                                        <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

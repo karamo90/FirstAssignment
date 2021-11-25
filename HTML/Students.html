@@ -1,0 +1,483 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <link href="../Libraries/Content/bootstrap.css" rel="stylesheet" />
+    <link href="../CSS/main.css" rel="stylesheet" />
+    <script src="../Libraries/Scripts/jquery-3.0.0.js"></script>
+    <script src="../Libraries/Scripts/bootstrap.js"></script>
+    <script src="../Libraries/Scripts/umd/popper.js"></script>
+
+</head>
+<body>
+    <!--Main Container-->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="justify-content-center mb-0">
+                    <div class="container text-white-50 text-md-center">
+                        <h1><strong>Students</strong></h1>
+                        <img src="../Assets/images/students.jpg" width="100" />
+                        <p><strong>Here you can add,edit or delete a Student </strong></p>
+                    </div>
+
+                </div>
+                <nav class="navbar navbar-expand-sm bg-dark">
+
+                    <!-- Links -->
+                    <ul class="navbar-nav align-content-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Courses.html">Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Trainers.html">Trainers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Students.html">Students</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Assignments.html">Assignment</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Trainers Per Course.html">Trainers Per Course</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Assignments Per Course.html">Assignments Per Course</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Assignments Per Students-Per Course.html">Assignment Per Course Per Students</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Index.html">Return to Home Screen</a>
+                        </li>
+                    </ul>
+
+                </nav>
+
+            </div>
+
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-left">
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalStudent">
+                    Create a new Student
+                </button>
+                <!-- The Modal -->
+                <div class="modal" id="myModalStudent">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- Modal-Header -->
+                            <div class="modal-header">
+                                <h1 class="modal-title">Create a New Student</h1>
+
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal-body -->
+                            <form>
+                                <div class="modal-body">
+
+                                    <strong>First Name :</strong>
+                                    <input type="text" name="firstName" pattern="[a-zA-Z]+" placeholder="Give First Name*" required autocomplete="off" />
+                                    <br />
+                                    <strong>Last Name:</strong>
+                                    <input type="text" name="lastName" pattern="[a-zA-Z]+" placeholder="Give Last Name*" required autocomplete="off" />
+                                    <br />
+                                    <strong>Date of Birth:</strong>
+                                    <input type="date" name="subject" value="1980-01-01" min="1980-01-01" max="1993-01-01" />
+                                    <br />
+                                    <strong>Tutition Fees:</strong>
+                                    <input type="number" placeholder="e.g 2500€" required autocomplete="off" min="0" max="10000" />
+
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <h4>Create a new Student-field, giving the proper values in the required fields.</h4>
+                                    <br />
+                                    <button type="submit" class="btn btn-success">Confirm</button>
+                                    <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table of Students -->
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th>FIRST NAME</th>
+                        <th>LAST NAME</th>
+                        <th>DATE OF BIRTH</th>
+                        <th>TUTITION FEES</th>
+                        <th>CHANGE</th>
+                </thead>
+                <!--Students' Table Assets-->
+                <tbody>
+                    <tr>
+                        <td>Christos</td>
+                        <td>Karamolegkos</td>
+                        <td>17-06-1990</td>
+                        <td>2.500 €</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditStudent">
+                                Edit
+                            </button>
+                            <!-- The Modal -->
+                            <div class="modal" id="myEditStudent">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+
+                                        <!-- Modal-Header -->
+                                        <div class="modal-header">
+                                            <h1 class="modal-title">Edit Student</h1>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+
+                                        <!-- Modal-body -->
+                                        <form>
+                                            <div class="modal-body">
+                                                <strong>First Name :</strong>
+                                                <input type="text" name="firstName" required pattern="[a-zA-Z]+" value="Christos" autocomplete="off" />
+                                                <br />
+                                                <strong>Last Name:</strong>
+                                                <input type="text" name="lastName" required pattern="[a-zA-Z]+" value="Karamolegkos" autocomplete="off" />
+                                                <br />
+                                                <strong>Date of Birth:</strong>
+                                                <input type="date" name="subject" value="1990-06-17" min="1980-01-01" max="1993-01-01" />
+                                                <br />
+                                                <strong>Tutition Fees:</strong>
+                                                <input type="number" value="2500" required autocomplete="off" min="0" max="10000" />
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <h4>You can edit a Student and create a new one  within the options we offer.</h4>
+                                                <button type="submit" class="btn btn-success">Confirm</button>
+                                                <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a class="btn btn-danger" data-toggle="modal" data-target="#myDeleteStudent">Delete</a>
+                            <div class="modal" id="myDeleteStudent">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <h1 class="modal-title">Delete this Student</h1>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <h4>You are about to delete this Student permanently with the selected values it contains. Are you sure?</h4>
+                                            <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>Petros</td>
+                        <td>Mantalos</td>
+                        <td>15-02-1989</td>
+                        <td>3400 €</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditStudent2">
+                                Edit
+                            </button>
+                            <!-- The Modal -->
+                            <div class="modal" id="myEditStudent2">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+
+                                        <!-- Modal-Header -->
+                                        <div class="modal-header">
+                                            <h1 class="modal-title">Edit Student</h1>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+
+                                        <!-- Modal-body -->
+                                        <form>
+                                            <div class="modal-body">
+                                                <strong>First Name :</strong>
+                                                <input type="text" name="firstName" required pattern="[a-zA-Z]+" value="Petros" autocomplete="off" />
+                                                <br />
+                                                <strong>Last Name:</strong>
+                                                <input type="text" name="lastName" required pattern="[a-zA-Z]+" value="Mantalos" autocomplete="off" />
+                                                <br />
+                                                <strong>Date of Birth:</strong>
+                                                <input type="date" name="subject" value="1989-02-15" min="1980-01-01" max="1993-01-01" />
+                                                <br />
+                                                <strong>Tutition Fees:</strong>
+                                                <input type="number" value="3400" required autocomplete="off" min="0" max="10000" />
+                                            </div>
+                                            <div class="modal-footer">
+                                                <h4>You can edit a Trainer and choose the new values within the options we offer.</h4>
+                                                <button type="submit" class="btn btn-success">Confirm</button>
+                                                <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a class="btn btn-danger" data-toggle="modal" data-target="#myDeleteStudent">Delete</a>
+                            <div class="modal" id="myDeleteStudent">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <h1 class="modal-title">Delete this Student</h1>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <h4>You are about to delete this Student permanently with the selected values it contains. Are you sure?</h4>
+                                            <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>Evdokia</td>
+                        <td>Panama</td>
+                        <td>24-11-1992</td>
+                        <td>5500 €</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditStudent3">
+                                Edit
+                            </button>
+                            <!-- The Modal -->
+                            <div class="modal" id="myEditStudent3">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+
+                                        <!-- Modal-Header -->
+                                        <div class="modal-header">
+                                            <h1 class="modal-title">Edit Student</h1>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+
+                                        <!-- Modal-body -->
+                                        <form>
+                                            <div class="modal-body">
+                                                <strong>First Name :</strong>
+                                                <input type="text" name="firstName" required pattern="[a-zA-Z]+" value="Evdokia" autocomplete="off" />
+                                                <br />
+                                                <strong>Last Name:</strong>
+                                                <input type="text" name="lastName" required pattern="[a-zA-Z]+" value="Panama" autocomplete="off" />
+                                                <br />
+                                                <strong>Date of Birth:</strong>
+                                                <input type="date" name="subject" value="1992-11-24" min="1980-01-01" max="1993-01-01" />
+                                                <br />
+                                                <strong>Tutition Fees:</strong>
+                                                <input type="number" value="5500" required autocomplete="off" min="0" max="10000" />
+                                            </div>
+                                            <div class="modal-footer">
+                                                <h4>You can edit a Student and choose the new values within the options we offer.</h4>
+                                                <button type="submit" class="btn btn-success">Confirm</button>
+                                                <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                            </div>
+                                    
+                                    </form>
+
+                                </div>
+                            </div>
+        </div>
+
+        <a class="btn btn-danger" data-toggle="modal" data-target="#myDeleteStudent">Delete</a>
+        <div class="modal" id="myDeleteStudent">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h1 class="modal-title">Delete this Student</h1>
+
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-footer">
+                        <h4>You are about to delete this Student permanently with the selected values it contains. Are you sure?</h4>
+                        <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </td>
+        </tr>
+        <tr>
+            <td>Petroula</td>
+            <td>Pavlatovic</td>
+            <td>23-07-1989</td>
+            <td>2800 €</td>
+            <td>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditStudent4">
+                    Edit
+                </button>
+                <!-- The Modal -->
+                <div class="modal" id="myEditStudent4">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- Modal-Header -->
+                            <div class="modal-header">
+                                <h1 class="modal-title">Edit Student</h1>
+
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal-body -->
+                            <form>
+                                <div class="modal-body">
+                                    <strong>First Name :</strong>
+                                    <input type="text" name="firstName" required pattern="[a-zA-Z]+" value="Petroula" autocomplete="off" />
+                                    <br />
+                                    <strong>Last Name:</strong>
+                                    <input type="text" name="lastName" required pattern="[a-zA-Z]+" value="Pavlatovic" autocomplete="off" />
+                                    <br />
+                                    <strong>Date of Birth:</strong>
+                                    <input type="date" name="subject" value="1989-07-23" min="1980-01-01" max="1993-01-01" />
+                                    <br />
+                                    <strong>Tutition Fees:</strong>
+                                    <input type="number" value="2800" required autocomplete="off" min="0" max="10000" />
+
+
+                                </div>
+                                <div class="modal-footer">
+                                    <h4>You can edit a Student and choose a new one  within the options we offer.</h4>
+                                    <button type="submit" class="btn btn-success">Confirm</button>
+                                    <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+                <a class="btn btn-danger" data-toggle="modal" data-target="#myDeleteStudent">Delete</a>
+                <div class="modal" id="myDeleteStudent">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <h1 class="modal-title">Delete this Trainer</h1>
+
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-footer">
+                                <h4>You are about to delete this Student permanently with the selected values it contains. Are you sure?</h4>
+                                <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Andreas</td>
+            <td>Fikioris</td>
+            <td>22-02-1991</td>
+            <td>7700 €</td>
+            <td>
+
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditStudent5">
+                    Edit
+                </button>
+                <!-- The Modal -->
+                <div class="modal" id="myEditStudent5">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- Modal-Header -->
+                            <div class="modal-header">
+                                <h1 class="modal-title">Edit Student</h1>
+
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal-body -->
+                            <form>
+                                <div class="modal-body">
+                                    <strong>First Name :</strong>
+                                    <input type="text" name="firstName" required pattern="[a-zA-Z]+" value="Andreas" autocomplete="off" />
+                                    <br />
+                                    <strong>Last Name:</strong>
+                                    <input type="text" name="lastName" required pattern="[a-zA-Z]+" value="Fikioris" autocomplete="off" />
+                                    <br />
+
+                                    <strong>Date of Birth:</strong>
+                                    <input type="date" name="subject" value="1991-02-22" min="1980-01-01" max="1993-01-01" />
+                                    <br />
+                                    <strong>Tutition Fees:</strong>
+                                    <input type="number" value="7700" required autocomplete="off" min="0" max="10000" />
+                                </div>
+                                <div class="modal-footer">
+                                    <h4>You can edit a Student and choose a new one within the options we offer.</h4>
+                                    <button type="submit" class="btn btn-success">Confirm</button>
+                                    <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+                <a class="btn btn-danger" data-toggle="modal" data-target="#myDeleteStudent">Delete</a>
+                <div class="modal" id="myDeleteStudent">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <h1 class="modal-title">Delete this Student</h1>
+
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-footer">
+                                <h4>You are about to delete this Student permanently with the selected values it contains. Are you sure?</h4>
+                                <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+    </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+This is the First Assignment of our People-Cert Education Bootcamp.
+Our main Task was to create HTML pages using Bootstrap and Css in order
+to mountain,edit or create some values.This is not a function webPage
+but our goal was to train ourselves in HTML typing within its values,validations
+classes,Tables,Headers.
+
+
+I hope you enjoy this Assignment as there will be many more in the future!
+
+
+
+Christos Karamolegkos..

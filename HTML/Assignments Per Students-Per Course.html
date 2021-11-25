@@ -1,0 +1,746 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="../Libraries/Content/bootstrap.css" rel="stylesheet" />
+    <link href="../CSS/main.css" rel="stylesheet" />
+    <script src="../Libraries/Scripts/jquery-3.0.0.js"></script>
+    <script src="../Libraries/Scripts/bootstrap.js"></script>
+    <script src="../Libraries/Scripts/umd/popper.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="justify-content-center mb-0">
+                    <div class="container text-white-50 text-md-center">
+                        <h1><strong>Assignments per Student per Course</strong></h1>
+                        <img src="../Assets/images/AssignmentCourseStudent.jpg" width="100" />
+                        <p><strong>Here you can add,pair or delete a Student and an Assignment within the Course's values</strong></p>
+                    </div>
+                    <nav class="navbar navbar-expand-sm bg-dark">
+
+                        <!-- Links -->
+                        <ul class="navbar-nav align-content-lg-center">
+                            <li class="nav-item">
+                                <a class="nav-link" href="Courses.html">Courses</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Trainers.html">Trainers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Students.html">Students</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Assignments.html">Assignment</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Trainers Per Course.html">Trainers Per Course</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Assignments Per Course.html">Assignments Per Course</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Assignments Per Students-Per Course.html">Assignment Per Course Per Students</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Index.html">Return to Home Screen</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <br />
+                    <div class="row">
+                        <div class="col-left">
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal4">
+                                Add Assignments per <br />Student per Course
+                            </button>
+                            <!-- The Modal -->
+                            <div class="modal" id="myModal4">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <!-- Modal-Header -->
+                                        <div class="modal-header">
+                                            <h2 class="modal-title">Add Assignments per Students per Course</h2>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <!-- Modal-body -->
+                                        <form>
+                                            <div class="modal-body">
+                                                <strong>Course's Title:</strong>
+                                                <input type="text" name="courseTitle" placeholder="Course's Title*" required pattern="[a-zA-Z-#]+" autocomplete="off" />
+                                                <hr />
+                                                <strong>Course's Stream:</strong>
+                                                <select required size="5" class="custom-select">
+                                                    <option>CB-7</option>
+                                                    <option>CB-8</option>
+                                                    <option>CB-9</option>
+                                                    <option>CB-10</option>
+                                                    <option>CB-11</option>
+                                                </select>
+                                                <hr />
+                                                <strong>Course's Type</strong>
+                                                <select required class="custom-select" size="2">
+                                                    <option>Part Time</option>
+                                                    <option>Full Time</option>
+                                                </select>
+                                                <hr />
+                                                <strong>Students:</strong>
+                                                <hr />
+                                                <select class="custom-select" size="5" required multiple>
+                                                    <option>Christos Karamolegkos</option>
+                                                    <option>Petros Mantalos</option>
+                                                    <option>Evdokia Panama</option>
+                                                    <option>Petroula Pavlatovic</option>
+                                                    <option>Andreas Fikioris</option>
+                                                </select>
+                                                <hr />
+                                                <strong>Submission Date :</strong>
+                                                <input type="date" name="subDate" min="2018-01-10" max="2021-03-09" required />
+                                                <hr />
+                                                <strong>Oral Mark:</strong>
+                                                <input type="number" name="oralMark" min="0" max="100" placeholder="0-100" required />
+                                                <br />
+                                                <strong>Total Mark:</strong>
+                                                <input type="number" name="totalMark" min="0" max="100" placeholder="0-100" required />
+
+                                                <hr />
+                                                <strong>Existing Assignments:</strong>
+                                                <select required multiple class="custom-select" size="5">
+                                                    <option>J-Query Modern Techniques</option>
+                                                    <option>React's new Methods 2021</option>
+                                                    <option>Javascript's Lamda Expressions</option>
+                                                    <option>Angular-evaluations</option>
+                                                    <option>R-Splus Statistic Tables</option>
+                                                </select>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <h4>Add an existing Assignment to an existing Student per Course .You can choose more than one Assignment and Student per Course.</h4>
+                                                <br />
+                                                <button type="submit" class="btn btn-success">Confirm</button>
+                                                <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal5">
+                                Pair Assignment per<br /> Students per Course
+                            </button>
+                            <!-- The Modal -->
+                            <div class="modal" id="myModal5">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <!-- Modal-Header -->
+                                        <div class="modal-header">
+                                            <h3 class="modal-title">Pair  Assignments per Students per Course</h3>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <!-- Modal-body -->
+                                        <form>
+                                            <div class="modal-body">
+                                                <strong>Existing Assignments:</strong>
+                                                <select required multiple class="custom-select" size="5">
+                                                    <option>J-Query Modern Techniques</option>
+                                                    <option>React's new Methods 2021</option>
+                                                    <option>Javascript's Lamda Expressions</option>
+                                                    <option>Angular-evaluations</option>
+                                                    <option>R-Splus Statistic Tables</option>
+                                                </select>
+                                                <hr />
+                                                <strong>Existing Courses:</strong>
+                                                <select required multiple class="custom-select" size="5">
+                                                    <option value="C#">C#---CB-9---Part Time</option>
+                                                    <option value="Javascript">Javascript---CB-10---Full Time</option>
+                                                    <option value="Java">Java---CB-11---Full Time</option>
+                                                    <option value="Python">Python---CB-10---Part Time</option>
+                                                    <option value="Python2">Python---CB-11---Full Time</option>
+                                                </select>
+                                                <hr />
+                                                <strong>Existing Students:</strong>
+                                                <select required multiple class="custom-select" size="5">
+                                                    <option>Christos Karamolegkos</option>
+                                                    <option>Petros Mantalos</option>
+                                                    <option>Evdokia Panama</option>
+                                                    <option>Petroula Pavlatovic</option>
+                                                    <option>Andreas Fikioris</option>
+                                                </select>
+                                            </div>
+                                            <!-- Modal footer -->
+                                            <div class="modal-footer">
+                                                <h4>Pair an existing Assignment and Student per Course .You can choose more than one Assignment, Student and Course.</h4>
+                                                <br />
+                                                <button type="submit" class="btn btn-success">Confirm</button>
+                                                <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Table of Trainers and Courses -->
+                        <table class="table table-dark">
+                            <thead>
+                                <tr>
+                                    <th>TITLE</th>
+                                    <th>STREAM</th>
+                                    <th>TYPE</th>
+                                    <th>ASSIGNMENTS</th>
+                                    <th>STUDENTS</th>
+                                    <th>CHANGE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Python</td>
+                                    <td>CB-11</td>
+                                    <td>Full Time</td>
+                                    <td>
+                                        J-Query Modern Techniques
+                                        <br />
+                                        React's new Methods 2021
+                                        <br />
+                                        Angular-evaluations
+                                    </td>
+                                    <td>
+                                        Christos Karamolegkos<br />
+                                        Petros Mantalos<br />
+                                        Andreas Fikioris
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditAssignmentPerCourseperStudent1">
+                                            Edit
+                                        </button>
+                                        <!-- The Modal -->
+                                        <div class="modal" id="myEditAssignmentPerCourseperStudent1">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <!-- Modal-Header -->
+                                                    <div class="modal-header">
+                                                        <h3 class="modal-title">Edit an Assignment-Student with a Course</h3>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <!-- Modal-body -->
+                                                    <form>
+                                                        <div class="modal-body">
+                                                            <strong>Course's Title:</strong>
+                                                            <select required size="5" class="custom-select">
+                                                                <option>C#</option>
+                                                                <option>Javascript</option>
+                                                                <option>Java</option>
+                                                                <option selected>Python</option>
+                                                                <option>R-Splus</option>
+                                                            </select>
+                                                            <hr />
+                                                            <strong>Course's Stream:</strong>
+                                                            <select required size="5" class="custom-select">
+                                                                <option>CB-7</option>
+                                                                <option>CB-8</option>
+                                                                <option>CB-9</option>
+                                                                <option>CB-10</option>
+                                                                <option selected>CB-11</option>
+                                                            </select>
+                                                            <hr />
+                                                            <strong>Course's Type</strong>
+                                                            <select required size="2" class="custom-select">
+                                                                <option>Part Time</option>
+                                                                <option selected>Full Time</option>
+                                                            </select>
+                                                            <hr />
+                                                            <strong>Students:</strong>
+                                                            <br />
+                                                            <select class="custom-select" size="5" required multiple>
+                                                                <option selected>Christos Karamolegkos</option>
+                                                                <option selected>Petros Mantalos</option>
+                                                                <option>Evdokia Panama</option>
+                                                                <option>Petroula Pavlatovic</option>
+                                                                <option selected>Andreas Fikioris</option>
+                                                            </select>
+                                                            <hr />
+
+                                                            <strong>Assignments:</strong>
+                                                            <select required multiple class="custom-select" size="5">
+                                                                <option selected>J-Query Modern Techniques</option>
+                                                                <option selected>React's new Methods 2021</option>
+                                                                <option>Javascript's Lamda Expressions</option>
+                                                                <option selected>Angular-evaluations</option>
+                                                                <option>R-Splus Statistic Tables</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <h4>Edit an existing Assignment to an existing Student per Course .You can choose more than one Assignment and Student per Course.</h4>
+                                                            <br />
+                                                            <button type="submit" class="btn btn-success">Confirm</button>
+                                                            <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="btn btn-danger" data-toggle="modal" data-target="#myDelete">Delete</a>
+                                        <div class="modal" id="myDelete">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <h1 class="modal-title">Delete this Domain</h1>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <h4>You are about to delete this domain which contains Assignments per Students per Courses permanently with its selected values. Are you sure?</h4>
+                                                        <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Javascript</td>
+                                    <td>CB-10</td>
+                                    <td>Full Time</td>
+                                    <td>
+                                        Angular-evaluations
+                                        <br />
+                                        Javascript's Lamda Expressions
+                                    </td>
+                                    <td>
+                                        Andreas Fikioris<br />
+                                        Petros Mantalos
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditAssignmentPerCourseperStudent2">
+                                            Edit
+                                        </button>
+                                        <!-- The Modal -->
+                                        <div class="modal" id="myEditAssignmentPerCourseperStudent2">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <!-- Modal-Header -->
+                                                    <div class="modal-header">
+                                                        <h3 class="modal-title">Edit an Assignment-Student with a Course</h3>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <!-- Modal-body -->
+                                                    <form>
+                                                        <div class="modal-body">
+                                                            <strong>Course's Title:</strong>
+                                                            <select required size="5" class="custom-select">
+                                                                <option>C#</option>
+                                                                <option selected>Javascript</option>
+                                                                <option>Java</option>
+                                                                <option>Python</option>
+                                                                <option>R-Splus</option>
+                                                            </select>
+                                                            <hr />
+                                                            <strong>Course's Stream:</strong>
+                                                            <select required size="5" class="custom-select">
+                                                                <option>CB-7</option>
+                                                                <option>CB-8</option>
+                                                                <option>CB-9</option>
+                                                                <option selected>CB-10</option>
+                                                                <option>CB-11</option>
+                                                            </select>
+                                                            <hr />
+                                                            <strong>Course's Type</strong>
+                                                            <select required size="2" class="custom-select">
+                                                                <option>Part Time</option>
+                                                                <option selected>Full Time</option>
+                                                            </select>
+                                                            <hr />
+                                                            <strong>Students:</strong>
+                                                            <br />
+                                                            <select class="custom-select" size="5" required multiple>
+                                                                <option>Christos Karamolegkos</option>
+                                                                <option selected>Petros Mantalos</option>
+                                                                <option>Evdokia Panama</option>
+                                                                <option>Petroula Pavlatovic</option>
+                                                                <option selected>Andreas Fikioris</option>
+                                                            </select>
+                                                            <hr />
+                                                            <strong>Assignments:</strong>
+                                                            <select required multiple class="custom-select" size="5">
+                                                                <option>J-Query Modern Techniques</option>
+                                                                <option>React's new Methods 2021</option>
+                                                                <option selected>Javascript's Lamda Expressions</option>
+                                                                <option selected>Angular-evaluations</option>
+                                                                <option>R-Splus Statistic Tables</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <h4>Edit an existing Assignment to an existing Student per Course .You can choose more than one Assignment and Student per Course.</h4>
+                                                            <br />
+                                                            <button type="submit" class="btn btn-success">Confirm</button>
+                                                            <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="btn btn-danger" data-toggle="modal" data-target="#myDelete">Delete</a>
+                                        <div class="modal" id="myDelete">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <h1 class="modal-title">Delete this Domain</h1>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <h4>You are about to delete this domain which contains Assignments per Students per Courses permanently with its selected values. Are you sure?</h4>
+                                                        <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Python</td>
+                                    <td>CB-10</td>
+                                    <td>Part Time</td>
+                                    <td>
+                                        R-Splus Statistic Tables
+                                        <br />
+                                        J-Query Modern Techniques
+                                        <br />
+                                        React's new Methods 2021
+                                        <br />
+                                        Javascript's Lamda Expressions
+                                    </td>
+                                    <td>
+                                        Evdokia Panama<br />
+                                        Petroula Pavlatovic
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditAssignmentPerCourseperStudent3">
+                                            Edit
+                                        </button>
+                                        <!-- The Modal -->
+                                        <div class="modal" id="myEditAssignmentPerCourseperStudent3">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <!-- Modal-Header -->
+                                                    <div class="modal-header">
+                                                        <h3 class="modal-title">Edit an Assignment-Student with a Course</h3>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <!-- Modal-body -->
+                                                    <form>
+                                                        <div class="modal-body">
+                                                            <strong>Course's Title:</strong>
+                                                            <select required size="5" class="custom-select">
+                                                                <option>C#</option>
+                                                                <option>Javascript</option>
+                                                                <option>Java</option>
+                                                                <option selected>Python</option>
+                                                                <option>R-Splus</option>
+                                                            </select>
+                                                            <hr />
+                                                            <strong>Course's Stream:</strong>
+                                                            <select required size="5" class="custom-select">
+                                                                <option>CB-7</option>
+                                                                <option>CB-8</option>
+                                                                <option>CB-9</option>
+                                                                <option selected>CB-10</option>
+                                                                <option>CB-11</option>
+                                                            </select>
+                                                            <hr />
+                                                            <strong>Course's Type</strong>
+                                                            <select required size="2" class="custom-select">
+                                                                <option selected>Part Time</option>
+                                                                <option>Full Time</option>
+                                                            </select>
+                                                            <hr />
+                                                            <strong>Students:</strong>
+                                                            <br />
+                                                            <select class="custom-select" size="5" required multiple>
+                                                                <option>Christos Karamolegkos</option>
+                                                                <option>Petros Mantalos</option>
+                                                                <option selected>Evdokia Panama</option>
+                                                                <option selected>Petroula Pavlatovic</option>
+                                                                <option>Andreas Fikioris</option>
+                                                            </select>
+                                                            <hr />
+                                                            <strong>Assignments:</strong>
+                                                            <select required multiple class="custom-select" size="5">
+                                                                <option selected>J-Query Modern Techniques</option>
+                                                                <option selected>React's new Methods 2021</option>
+                                                                <option selected>Javascript's Lamda Expressions</option>
+                                                                <option>Angular-evaluations</option>
+                                                                <option selected>R-Splus Statistic Tables</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <h4>Edit an existing Assignment to an existing Student per Course .You can choose more than one Assignment and Student per Course.</h4>
+                                                            <br />
+                                                            <button type="submit" class="btn btn-success">Confirm</button>
+                                                            <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="btn btn-danger" data-toggle="modal" data-target="#myDelete">Delete</a>
+                                        <div class="modal" id="myDelete">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <h1 class="modal-title">Delete this Domain</h1>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <h4>You are about to delete this domain which contains Assignments per Students per Courses permanently with its selected values. Are you sure?</h4>
+                                                        <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>C#</td>
+                                    <td>CB-9</td>
+                                    <td>Part Time</td>
+                                    <td>
+                                        R-Splus Statistic Tables
+                                        <br />
+                                        Angular-evaluations
+                                    </td>
+                                    <td>
+                                        Christos Karamolegkos<br />
+                                        Petroula Pavlatovic
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditAssignmentPerCourseperStudent4">
+                                            Edit
+                                        </button>
+                                        <!-- The Modal -->
+                                        <div class="modal" id="myEditAssignmentPerCourseperStudent4">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <!-- Modal-Header -->
+                                                    <div class="modal-header">
+                                                        <h3 class="modal-title">Edit an Assignment-Student with a Course</h3>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <!-- Modal-body -->
+                                                    <form>
+                                                        <div class="modal-body">
+                                                            <strong>Course's Title:</strong>
+                                                            <select required size="5" class="custom-select">
+                                                                <option selected>C#</option>
+                                                                <option>Javascript</option>
+                                                                <option>Java</option>
+                                                                <option>Python</option>
+                                                                <option>R-Splus</option>
+                                                            </select>
+                                                            <hr />
+                                                            <strong>Course's Stream:</strong>
+                                                            <select required size="5" class="custom-select">
+                                                                <option>CB-7</option>
+                                                                <option>CB-8</option>
+                                                                <option selected>CB-9</option>
+                                                                <option>CB-10</option>
+                                                                <option>CB-11</option>
+                                                            </select>
+                                                            <hr />
+                                                            <strong>Course's Type</strong>
+                                                            <select required size="2" class="custom-select">
+                                                                <option selected>Part Time</option>
+                                                                <option>Full Time</option>
+                                                            </select>
+                                                            <hr />
+                                                            <strong>Students:</strong>
+                                                            <br />
+                                                            <select class="custom-select" size="5" required multiple>
+                                                                <option selected>Christos Karamolegkos</option>
+                                                                <option>Petros Mantalos</option>
+                                                                <option>Evdokia Panama</option>
+                                                                <option selected>Petroula Pavlatovic</option>
+                                                                <option>Andreas Fikioris</option>
+                                                            </select>
+                                                            <hr />
+                                                            <strong>Assignments:</strong>
+                                                            <select required multiple class="custom-select" size="5">
+                                                                <option>J-Query Modern Techniques</option>
+                                                                <option>React's new Methods 2021</option>
+                                                                <option>Javascript's Lamda Expressions</option>
+                                                                <option selected>Angular-evaluations</option>
+                                                                <option selected>R-Splus Statistic Tables</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <h4>Edit an existing Assignment to an existing Student per Course .You can choose more than one Assignment and Student per Course.</h4>
+                                                            <br />
+                                                            <button type="submit" class="btn btn-success">Confirm</button>
+                                                            <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        </div>
+
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="btn btn-danger" data-toggle="modal" data-target="#myDelete">Delete</a>
+                                        <div class="modal" id="myDelete">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <h1 class="modal-title">Delete this Domain</h1>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <h4>You are about to delete this domain which contains Assignments per Students per Courses permanently with its selected values. Are you sure?</h4>
+                                                        <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                <tr>
+                                    <td>Java</td>
+                                    <td>CB-11</td>
+                                    <td>Full Time</td>
+                                    <td>
+                                        React's new Methods 2021
+                                        <br />
+                                        Angular-evaluations
+                                        <br />
+                                        J-Query Modern Techniques
+                                    </td>
+                                    <td>
+                                        Christos Karamolegkos<br />
+                                        Petros Mantalos
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditAssignmentPerCourseperStudent5">
+                                            Edit
+                                        </button>
+                                        <!-- The Modal -->
+                                        <div class="modal" id="myEditAssignmentPerCourseperStudent5">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <!-- Modal-Header -->
+                                                    <div class="modal-header">
+                                                        <h3 class="modal-title">Edit an Assignment-Student with a Course</h3>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <!-- Modal-body -->
+                                                    <form>
+                                                        <div class="modal-body">
+                                                            <strong>Course's Title:</strong>
+                                                            <select required size="5" class="custom-select">
+                                                                <option>C#</option>
+                                                                <option>Javascript</option>
+                                                                <option selected>Java</option>
+                                                                <option>Python</option>
+                                                                <option>R-Splus</option>
+                                                            </select>
+                                                            <hr />
+                                                            <strong>Course's Stream:</strong>
+                                                            <select required size="5" class="custom-select">
+                                                                <option>CB-7</option>
+                                                                <option>CB-8</option>
+                                                                <option>CB-9</option>
+                                                                <option>CB-10</option>
+                                                                <option selected>CB-11</option>
+                                                            </select>
+                                                            <hr />
+                                                            <strong>Course's Type</strong>
+                                                            <select required size="2" class="custom-select">
+                                                                <option>Part Time</option>
+                                                                <option selected>Full Time</option>
+                                                            </select>
+                                                            <hr />
+                                                            <strong>Students:</strong>
+                                                            <br />
+                                                            <select class="custom-select" size="5" required multiple>
+                                                                <option selected>Christos Karamolegkos</option>
+                                                                <option selected>Petros Mantalos</option>
+                                                                <option>Evdokia Panama</option>
+                                                                <option>Petroula Pavlatovic</option>
+                                                                <option>Andreas Fikioris</option>
+                                                            </select>
+                                                            <hr />
+
+                                                            <strong>Assignments:</strong>
+                                                            <select required multiple class="custom-select" size="5">
+                                                                <option selected>J-Query Modern Techniques</option>
+                                                                <option selected>React's new Methods 2021</option>
+                                                                <option>Javascript's Lamda Expressions</option>
+                                                                <option selected>Angular-evaluations</option>
+                                                                <option>R-Splus Statistic Tables</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <h4>Edit an existing Assignment to an existing Student per Course .You can choose more than one Assignment and Student per Course.</h4>
+                                                            <br />
+                                                            <button type="submit" class="btn btn-success">Confirm</button>
+                                                            <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="btn btn-danger" data-toggle="modal" data-target="#myDelete">Delete</a>
+                                        <div class="modal" id="myDelete">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <h1 class="modal-title">Delete this Domain</h1>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <h4>You are about to delete this domain which contains Assignments per Students per Courses permanently with its selected values. Are you sure?</h4>
+                                                        <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

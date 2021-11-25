@@ -1,0 +1,459 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <link href="../Libraries/Content/bootstrap.css" rel="stylesheet" />
+    <link href="../CSS/main.css" rel="stylesheet" />
+    <script src="../Libraries/Scripts/jquery-3.0.0.js"></script>
+    <script src="../Libraries/Scripts/bootstrap.js"></script>
+    <script src="../Libraries/Scripts/umd/popper.js"></script>
+
+</head>
+<body>
+    <!--Main Container-->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="justify-content-center mb-0">
+                    <div class="container text-white-50 text-md-center">
+                        <h1><strong>Trainers</strong></h1>
+                        <img src="../Assets/images/trainers.png" width="100" />
+                        <p><strong>Here you can add,edit or delete a Trainer </strong></p>
+                    </div>
+
+                </div>
+
+                <nav class="navbar navbar-expand-sm bg-dark">
+
+                    <!-- Links -->
+                    <ul class="navbar-nav align-content-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Courses.html">Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Trainers.html">Trainers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Students.html">Students</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Assignments.html">Assignment</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Trainers Per Course.html">Trainers Per Course</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Assignments Per Course.html">Assignments Per Course</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Assignments Per Students-Per Course.html">Assignment Per Course Per Students</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Index.html">Return to Home Screen</a>
+                        </li>
+                    </ul>
+
+                </nav>
+
+            </div>
+
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-left">
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+                    Create a new Trainer
+                </button>
+                <!-- The Modal -->
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- Modal-Header -->
+                            <div class="modal-header">
+                                <h1 class="modal-title">Create a New Trainer</h1>
+
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal-body -->
+                            <form>
+                                <div class="modal-body">
+
+                                    <strong>First Name :</strong>
+                                    <input type="text" name="firstName" pattern="[a-zA-Z]+" placeholder="Give First Name*" required autocomplete="off" />
+                                    <br />
+                                    <strong>Last Name:</strong>
+                                    <input type="text" name="lastName" pattern="[a-zA-Z]+" placeholder="Give Last Name*" required autocomplete="off" />
+                                    <br />
+                                    <strong>Subject:</strong>
+                                    <input type="text" name="subject" required placeholder="Give the Subject's Title*" autocomplete="off" />
+
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <h4>Create a new Trainer giving the proper values in the required fields.</h4>
+                                    <br />
+                                    <button type="submit" class="btn btn-success">Confirm</button>
+                                    <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Table of Trainers -->
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th>FIRST NAME</th>
+                        <th>LAST NAME</th>
+                        <th>SUBJECT</th>
+                        <th>CHANGE</th>
+                </thead>
+                <tbody>
+                    <!--Trainer's Table Assets-->
+                    <tr>
+                        <td>Leon</td>
+                        <td>Ntokardos</td>
+                        <td>Theory</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditTrainer">
+                                Edit
+                            </button>
+                            <!-- The Modal -->
+                            <div class="modal" id="myEditTrainer">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+
+                                        <!-- Modal-Header -->
+                                        <div class="modal-header">
+                                            <h1 class="modal-title">Edit Trainer</h1>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+
+                                        <!-- Modal-body -->
+                                        <form>
+                                            <div class="modal-body">
+                                                <strong>First Name :</strong>
+                                                <input type="text" name="firstName" required pattern="[a-zA-Z]+" value="Leon" autocomplete="off" />
+                                                <br />
+                                                <strong>Last Name:</strong>
+                                                <input type="text" name="lastName" required pattern="[a-zA-Z]+" value="Ntokardos" autocomplete="off" />
+                                                <br />
+                                                <strong>Subject:</strong>
+                                                <input type="text" name="subject" required value="Theory" autocomplete="off" />
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <h4>You can edit a Trainer and choose the new values within the options we offer.</h4>
+                                                <button type="submit" class="btn btn-success">Confirm</button>
+                                                <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a class="btn btn-danger" data-toggle="modal" data-target="#myDelete">Delete</a>
+                            <div class="modal" id="myDelete">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <h1 class="modal-title">Delete this Trainer</h1>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <h4>You are about to delete this Trainer permanently with the selected values it contains. Are you sure?</h4>
+                                            <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>Aggelos</td>
+                        <td>Charisteas</td>
+                        <td>Assignments Theory</td>
+
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditTrainer2">
+                                Edit
+                            </button>
+                            <!-- The Modal -->
+                            <div class="modal" id="myEditTrainer2">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+
+                                        <!-- Modal-Header -->
+                                        <div class="modal-header">
+                                            <h1 class="modal-title">Edit Trainer</h1>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+
+                                        <!-- Modal-body -->
+                                        <form>
+                                            <div class="modal-body">
+                                                <strong>First Name :</strong>
+                                                <input type="text" name="firstName" required pattern="[a-zA-Z]+" value="Aggelos" autocomplete="off" />
+                                                <br />
+                                                <strong>Last Name:</strong>
+                                                <input type="text" name="lastName" required pattern="[a-zA-Z]+" value="Charisteas" autocomplete="off" />
+                                                <br />
+                                                <strong>Subject:</strong>
+                                                <input type="text" name="subject" required value="Assignments Theory" autocomplete="off" />
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <h4>You can edit a Trainer and choose the new values within the options we offer.</h4>
+                                                <button type="submit" class="btn btn-success">Confirm</button>
+                                                <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a class="btn btn-danger" data-toggle="modal" data-target="#myDelete">Delete</a>
+                            <div class="modal" id="myDelete">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <h1 class="modal-title">Delete this Trainer</h1>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <h4>You are about to delete this Trainer permanently with the selected values it contains. Are you sure?</h4>
+                                            <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>Anna</td>
+                        <td>Banana</td>
+                        <td>Loops</td>
+
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditTrainer3">
+                                Edit
+                            </button>
+                            <!-- The Modal -->
+                            <div class="modal" id="myEditTrainer3">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+
+                                        <!-- Modal-Header -->
+                                        <div class="modal-header">
+                                            <h1 class="modal-title">Edit Trainer</h1>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+
+                                        <!-- Modal-body -->
+                                        <form>
+                                            <div class="modal-body">
+                                                <strong>First Name :</strong>
+                                                <input type="text" name="firstName" required pattern="[a-zA-Z]+" value="Anna" autocomplete="off" />
+                                                <br />
+                                                <strong>Last Name:</strong>
+                                                <input type="text" name="lastName" required pattern="[a-zA-Z]+" value="Banana" autocomplete="off" />
+                                                <br />
+                                                <strong>Subject:</strong>
+                                                <input type="text" name="subject" required value="Loops" autocomplete="off" />
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <h4>You can edit a Trainer and choose the new values within the options we offer.</h4>
+                                                <button type="submit" class="btn btn-success">Confirm</button>
+                                                <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a class="btn btn-danger" data-toggle="modal" data-target="#myDelete">Delete</a>
+                            <div class="modal" id="myDelete">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <h1 class="modal-title">Delete this Trainer</h1>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <h4>You are about to delete this Trainer permanently with the selected values it contains. Are you sure?</h4>
+                                            <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Kostantina</td>
+                        <td>Pavlatou</td>
+                        <td>Java-Theory</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditTrainer4">
+                                Edit
+                            </button>
+                            <!-- The Modal -->
+                            <div class="modal" id="myEditTrainer4">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+
+                                        <!-- Modal-Header -->
+                                        <div class="modal-header">
+                                            <h1 class="modal-title">Edit Trainer</h1>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+
+                                        <!-- Modal-body -->
+                                        <form>
+                                            <div class="modal-body">
+                                                <strong>First Name :</strong>
+                                                <input type="text" name="firstName" required pattern="[a-zA-Z]+" value="Kostantina" autocomplete="off" />
+                                                <br />
+                                                <strong>Last Name:</strong>
+                                                <input type="text" name="lastName" required pattern="[a-zA-Z]+" value="Pavlatou" autocomplete="off" />
+                                                <br />
+                                                <strong>Subject:</strong>
+                                                <input type="text" name="subject" required value="Java-Theory" autocomplete="off" />
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <h4>You can edit a Trainer and choose the new values within the options we offer.</h4>
+                                                <button type="submit" class="btn btn-success">Confirm</button>
+                                                <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a class="btn btn-danger" data-toggle="modal" data-target="#myDelete">Delete</a>
+                            <div class="modal" id="myDelete">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <h1 class="modal-title">Delete this Trainer</h1>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <h4>You are about to delete this Trainer permanently with the selected values it contains. Are you sure?</h4>
+                                            <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>Andreas</td>
+                        <td>Fikioris</td>
+                        <td>React's Validations</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditTrainer5">
+                                Edit
+                            </button>
+                            <!-- The Modal -->
+                            <div class="modal" id="myEditTrainer5">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+
+                                        <!-- Modal-Header -->
+                                        <div class="modal-header">
+                                            <h1 class="modal-title">Edit Trainer</h1>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+
+                                        <!-- Modal-body -->
+                                        <form>
+                                            <div class="modal-body">
+                                                <strong>First Name :</strong>
+                                                <input type="text" name="firstName" required pattern="[a-zA-Z]+" value="Andreas" autocomplete="off" />
+                                                <br />
+                                                <strong>Last Name:</strong>
+                                                <input type="text" name="lastName" required pattern="[a-zA-Z]+" value="Fikioris" autocomplete="off" />
+                                                <br />
+                                                <strong>Subject:</strong>
+                                                <input type="text" name="subject" required value="React's Validations" autocomplete="off" />
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <h4>You can edit a Trainer and choose the new values within the options we offer.</h4>
+                                                <button type="submit" class="btn btn-success">Confirm</button>
+                                                <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a class="btn btn-danger" data-toggle="modal" data-target="#myDelete">Delete</a>
+                            <div class="modal" id="myDelete">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <h1 class="modal-title">Delete this Trainer</h1>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <h4>You are about to delete this Trainer permanently with the selected values it contains. Are you sure?</h4>
+                                            <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+</body>
+</html>

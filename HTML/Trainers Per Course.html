@@ -1,0 +1,658 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <link href="../Libraries/Content/bootstrap.css" rel="stylesheet" />
+    <link href="../CSS/main.css" rel="stylesheet" />
+    <script src="../Libraries/Scripts/jquery-3.0.0.js"></script>
+    <script src="../Libraries/Scripts/bootstrap.js"></script>
+    <script src="../Libraries/Scripts/umd/popper.js"></script>
+
+</head>
+<body>
+    <!--Main Container-->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="justify-content-center mb-0">
+                    <div class="container text-white-50 text-md-center">
+                        <h1><strong>Trainers per Course</strong></h1>
+                        <img src="../Assets/images/TeachersPerCourse.png" width="100" />
+                        <p><strong>Here you can add,pair or delete a Trainer within the Course's values</strong></p>
+                    </div>
+                    <nav class="navbar navbar-expand-sm bg-dark">
+
+                        <!-- Links -->
+                        <ul class="navbar-nav align-content-lg-center">
+                            <li class="nav-item">
+                                <a class="nav-link" href="Courses.html">Courses</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Trainers.html">Trainers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Students.html">Students</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Assignments.html">Assignment</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Trainers Per Course.html">Trainers Per Course</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Assignments Per Course.html">Assignments Per Course</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Assignments Per Students-Per Course.html">Assignment Per Course Per Students</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Index.html">Return to Home Screen</a>
+                            </li>
+                        </ul>
+
+                    </nav>
+                    <br />
+                    <div class="row">
+                        <div class="col-left">
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+                                Add Trainers per Course
+                            </button>
+                            <!-- The Modal -->
+                            <div class="modal" id="myModal">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <!-- Modal-Header -->
+                                        <div class="modal-header">
+                                            <h2 class="modal-title">Add Trainers per Course</h2>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <!-- Modal-body -->
+                                        <form>
+                                            <div class="modal-body">
+
+                                                <strong>Course's Title:</strong>
+                                                <input type="text" name="courseTtile" pattern="[a-zA-Z]+" placeholder="Give Course's Title*" required autocomplete="off" />
+                                                <hr />
+                                                <strong>Course's Stream:</strong>
+                                                <select required size="5"class="custom-select">
+                                                    <option>CB-7</option>
+                                                    <option>CB-8</option>
+                                                    <option>CB-9</option>
+                                                    <option>CB-10</option>
+                                                    <option>CB-11</option>
+                                                </select>
+                                                <hr />
+                                                <strong>Type:</strong>
+                                                <select required size="2"class="custom-select">
+                                                    <option>Part Time</option>
+                                                    <option>Full Time</option>
+                                                </select>
+                                                <hr />                                                
+                                                <strong>Existing Trainers:</strong>
+                                                <select required multiple class="custom-select" size="5">
+                                                    <option>Leon Ntokardos</option>
+                                                    <option>Aggelos Charisteas</option>
+                                                    <option>Anna Banana</option>
+                                                    <option>Kostantina Pavlatou</option>
+                                                    <option>Andreas Fikioris</option>
+
+                                                </select>
+                                            </div>
+
+                                            <!-- Modal footer -->
+                                            <div class="modal-footer">
+                                                <h4>Add a Trainer per Course giving the proper values in the required fields.You can choose more than one Trainer.</h4>
+                                                <br />
+                                                <button type="submit" class="btn btn-success">Confirm</button>
+                                                <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal1">
+                                Pair Trainers per Course
+                            </button>
+                            <!-- The Modal -->
+                            <div class="modal" id="myModal1">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <!-- Modal-Header -->
+                                        <div class="modal-header">
+                                            <h3 class="modal-title">Pair existing Trainers per Course</h3>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <!-- Modal-body -->
+                                        <form>
+                                            <div class="modal-body">
+                                                <strong>Course's Title:</strong>
+                                                <select required multiple class="custom-select" size="5">
+                                                    <option>Python</option>
+                                                    <option>Javascript</option>
+                                                    <option>Python</option>
+                                                    <option>C#</option>
+                                                    <option>Java</option>
+                                                </select>
+                                                <hr />
+                                                <strong>Course's Stream:</strong>
+                                                <select required multiple class="custom-select" size="5">
+                                                    <option>CB-7</option>
+                                                    <option>CB-8</option>
+                                                    <option>CB-9</option>
+                                                    <option>CB-10</option>
+                                                    <option>CB-11</option>
+                                                </select>
+                                                <hr />
+                                                <strong>Course's Type:</strong>
+                                                <select required multiple class="custom-select" size="2">
+                                                    <option>Part Time</option>
+                                                    <option>Full Time</option>
+                                                </select>
+                                                <hr /> 
+                                                <strong>Existing Trainers:</strong>
+                                                <select required multiple class="custom-select" size="5">
+                                                    <option>Leon Ntokardos</option>
+                                                    <option>Aggelos Charisteas</option>
+                                                    <option>Anna Banana</option>
+                                                    <option>Kostantina Pavlatou</option>
+                                                    <option>Andreas Fikioris</option>
+                                                </select>
+
+                                            </div>
+
+                                            <!-- Modal footer -->
+                                            <div class="modal-footer">
+                                                <h4>Pair an existing Trainer per Course .You can choose more than one Trainer and Course.</h4>
+                                                <br />
+                                                <button type="submit" class="btn btn-success">Confirm</button>
+                                                <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Table of Trainers per Courses -->
+                        <table class="table table-dark">
+                            <thead>
+                                <tr>
+                                    <th>TITLE</th>
+                                    <th>STREAM</th>
+                                    <th>TYPE</th>
+                                    <th>TRAINERS</th>
+                                    <th>CHANGE</th>
+                                </tr>
+                            </thead>
+                            <!--Table of Courses Assets-->
+                            <tbody>
+                                <tr>
+                                    <td>Python</td>
+                                    <td>CB-11</td>
+                                    <td>Full Time</td>
+                                    <td>
+                                        Leon Ntokardos
+                                        <br />Aggelos Charisteas
+                                        <br />Anna Banana
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditTrainerPerCourse1">
+                                            Edit
+                                        </button>
+                                        <!-- The Modal -->
+                                        <div class="modal" id="myEditTrainerPerCourse1">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <!-- Modal-Header -->
+                                                    <div class="modal-header">
+                                                        <h3 class="modal-title">Edit a Trainer with a Course</h3>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <!-- Modal-body -->
+                                                    <form>
+                                                        <div class="modal-body">
+
+                                                            <strong>Course's Title:</strong>
+                                                            <input type="text" name="courseTtile" pattern="[a-zA-Z]+" value="Python" required autocomplete="off" />
+                                                            <hr />
+                                                            <strong>Course's Stream:</strong>
+                                                            <select required size="5" class="custom-select">
+                                                                <option>CB-7</option>
+                                                                <option>CB-8</option>
+                                                                <option>CB-9</option>
+                                                                <option>CB-10</option>
+                                                                <option selected>CB-11</option>
+                                                            </select>
+                                                            <hr />
+                                                            <strong>Type:</strong>
+                                                            <select required size="2" class="custom-select">
+                                                                <option>Part Time</option>
+                                                                <option selected>Full Time</option>
+                                                            </select>                                                           
+                                                            <hr />
+                                                            <strong>Existing Trainers (selected in bold):</strong>
+                                                            <select required multiple class="custom-select" size="5">
+                                                                <option selected>Leon Ntokardos</option>
+                                                                <option selected>Aggelos Charisteas</option>
+                                                                <option selected>Anna Banana</option>
+                                                                <option>Kostantina Pavlatou</option>
+                                                                <option>Andreas Fikioris</option>
+
+                                                            </select>
+                                                        </div>
+
+                                                        <!-- Modal footer -->
+                                                        <div class="modal-footer">
+                                                            <h4>Edit a Trainer per Course giving the proper values in the required fields.You can choose more than one Trainer.</h4>
+                                                            <br />
+                                                            <button type="submit" class="btn btn-success">Confirm</button>
+                                                            <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                            <button type="button" class="btn btn-danger"data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="btn btn-danger" data-toggle="modal" data-target="#myDelete">Delete</a>
+                                        <div class="modal" id="myDelete">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <h1 class="modal-title">Delete this Domain</h1>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <h4>You are about to delete this domain which contains Trainers per Courses permanently with its selected values. Are you sure?</h4>
+                                                        <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Javascript</td>
+                                    <td>CB-10</td>
+                                    <td>Full Time</td>
+                                    <td>
+                                        Anna Banana
+                                        <br />Kostantina Pavlatou
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditTrainerPerCourse2">
+                                            Edit
+                                        </button>
+                                        <!-- The Modal -->
+                                        <div class="modal" id="myEditTrainerPerCourse2">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <!-- Modal-Header -->
+                                                    <div class="modal-header">
+                                                        <h3 class="modal-title">Edit a Trainer with a Course</h3>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <!-- Modal-body -->
+                                                    <form>
+                                                        <div class="modal-body">
+
+                                                            <strong>Course's Title:</strong>
+                                                            <input type="text" name="courseTtile" pattern="[a-zA-Z]+" value="Javascript" required autocomplete="off" />
+                                                            <hr />
+                                                            <strong>Course's Stream:</strong>
+                                                            <select required size="5" class="custom-select">
+                                                                <option>CB-7</option>
+                                                                <option>CB-8</option>
+                                                                <option>CB-9</option>
+                                                                <option selected>CB-10</option>
+                                                                <option>CB-11</option>
+                                                            </select>
+                                                            <hr />
+                                                            <strong>Type:</strong>
+                                                            <select required size="2"class="custom-select">
+                                                                <option selected>Part Time</option>
+                                                                <option>Full Time</option>
+                                                            </select>
+                                                            <hr />                         
+                                                            <strong>Existing Trainers (selected in bold):</strong>
+                                                            <select required multiple class="custom-select" size="5">
+                                                                <option>Leon Ntokardos</option>
+                                                                <option>Aggelos Charisteas</option>
+                                                                <option selected>Anna Banana</option>
+                                                                <option selected>Kostantina Pavlatou</option>
+                                                                <option>Andreas Fikioris</option>
+
+                                                            </select>
+                                                        </div>
+
+                                                        <!-- Modal footer -->
+                                                        <div class="modal-footer">
+                                                            <h4>Edit a Trainer per Course giving the proper values in the required fields.You can choose more than one Trainer.</h4>
+                                                            <br />
+                                                            <button type="submit" class="btn btn-success">Confirm</button>
+                                                            <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                            <button type="button" class="btn btn-danger"data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="btn btn-danger" data-toggle="modal" data-target="#myDelete">Delete</a>
+                                        <div class="modal" id="myDelete">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <h1 class="modal-title">Delete this Domain</h1>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <h4>You are about to delete this domain which contains Trainers per Courses permanently with its selected values. Are you sure?</h4>
+                                                        <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>Python</td>
+                                    <td>CB-10</td>
+                                    <td>Part Time</td>
+                                    <td>
+                                        Andreas Fikioris
+                                        <br />Aggelos Charisteas
+                                        <br />Anna Banana
+                                    </td>
+
+                                    <td>
+
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditTrainerPerCourse3">
+                                            Edit
+                                        </button>
+                                        <!-- The Modal -->
+                                        <div class="modal" id="myEditTrainerPerCourse3">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <!-- Modal-Header -->
+                                                    <div class="modal-header">
+                                                        <h3 class="modal-title">Edit a Trainer with a Course</h3>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <!-- Modal-body -->
+                                                    <form>
+                                                        <div class="modal-body">
+
+                                                            <strong>Course's Title:</strong>
+                                                            <input type="text" name="courseTtile" pattern="[a-zA-Z]+" value="Python" required autocomplete="off" />
+                                                            <hr />
+                                                            <strong>Course's Stream:</strong>
+                                                            <select required size="5" class="custom-select">
+                                                                <option>CB-7</option>
+                                                                <option>CB-8</option>
+                                                                <option>CB-9</option>
+                                                                <option selected>CB-10</option>
+                                                                <option>CB-11</option>
+
+                                                            </select>
+                                                            <hr />
+                                                            <strong>Type:</strong>
+                                                            <select required size="2" class="custom-select">
+                                                                <option selected>Part Time</option>
+                                                                <option>Full Time</option>
+                                                            </select>
+                                                            <hr />                                        
+                                                            <strong>Existing Trainers (selected in bold):</strong>
+                                                            <select required multiple class="custom-select" size="5">
+                                                                <option>Leon Ntokardos</option>
+                                                                <option selected>Aggelos Charisteas</option>
+                                                                <option selected>Anna Banana</option>
+                                                                <option>Kostantina Pavlatou</option>
+                                                                <option selected>Andreas Fikioris</option>
+
+                                                            </select>
+                                                        </div>
+
+                                                        <!-- Modal footer -->
+                                                        <div class="modal-footer">
+                                                            <h4>Edit a Trainer per Course giving the proper values in the required fields.You can choose more than one Trainer.</h4>
+                                                            <br />
+                                                            <button type="submit" class="btn btn-success">Confirm</button>
+                                                            <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                            <button type="button" class="btn btn-danger"data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="btn btn-danger" data-toggle="modal" data-target="#myDelete">Delete</a>
+                                        <div class="modal" id="myDelete">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <h1 class="modal-title">Delete this Domain</h1>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <h4>You are about to delete this domain which contains Trainers per Courses permanently with its selected values. Are you sure?</h4>
+                                                        <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>C#</td>
+                                    <td>CB-9</td>
+                                    <td>Part Time</td>
+                                    <td>
+                                        Kostantina Pavlatou
+                                        <br />Andreas Fikioris
+                                        <br />Leon Ntokardos
+                                    </td>
+
+                                    <td>
+
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditTrainerPerCourse4">
+                                            Edit
+                                        </button>
+                                        <!-- The Modal -->
+                                        <div class="modal" id="myEditTrainerPerCourse4">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <!-- Modal-Header -->
+                                                    <div class="modal-header">
+                                                        <h3 class="modal-title">Edit a Trainer with a Course</h3>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <!-- Modal-body -->
+                                                    <form>
+                                                        <div class="modal-body">
+
+                                                            <strong>Course's Title:</strong>
+                                                            <input type="text" name="courseTtile" pattern="[a-zA-Z]+" value="C#" required autocomplete="off" />
+                                                            <hr />
+                                                            <strong>Course's Stream:</strong>
+                                                            <select required size="5" class="custom-select">
+                                                                <option>CB-7</option>
+                                                                <option>CB-8</option>
+                                                                <option selected>CB-9</option>
+                                                                <option>CB-10</option>
+                                                                <option>CB-11</option>
+
+                                                            </select>
+                                                            <hr />
+                                                            <strong>Type:</strong>
+                                                            <select required size="2" class="custom-select">
+                                                                <option selected>Part Time</option>
+                                                                <option>Full Time</option>
+                                                            </select>
+                                                            <hr />                                           
+                                                            <strong>Existing Trainers (selected in bold):</strong>
+                                                            <select required multiple class="custom-select" size="5">
+                                                                <option selected>Leon Ntokardos</option>
+                                                                <option>Aggelos Charisteas</option>
+                                                                <option>Anna Banana</option>
+                                                                <option selected>Kostantina Pavlatou</option>
+                                                                <option selected>Andreas Fikioris</option>
+
+                                                            </select>
+                                                        </div>
+
+                                                        <!-- Modal footer -->
+                                                        <div class="modal-footer">
+                                                            <h4>Edit a Trainer per Course giving the proper values in the required fields.You can choose more than one Trainer.</h4>
+                                                            <br />
+                                                            <button type="submit" class="btn btn-success">Confirm</button>
+                                                            <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                            <button type="button" class="btn btn-danger"data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="btn btn-danger" data-toggle="modal" data-target="#myDelete">Delete</a>
+                                        <div class="modal" id="myDelete">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <h1 class="modal-title">Delete this Domain</h1>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <h4>You are about to delete this domain which contains Trainers per Courses permanently with its selected values. Are you sure?</h4>
+                                                        <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                <tr>
+                                    <td>Java</td>
+                                    <td>CB-11</td>
+                                    <td>Full Time</td>
+                                    <td>
+                                        Leon Ntokardos
+                                        <br />Aggelos Charisteas
+                                        <br />Anna Banana
+                                    </td>
+
+                                    <td>
+
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditTrainerPerCourse5">
+                                            Edit
+                                        </button>
+                                        <!-- The Modal -->
+                                        <div class="modal" id="myEditTrainerPerCourse5">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <!-- Modal-Header -->
+                                                    <div class="modal-header">
+                                                        <h3 class="modal-title">Edit a Trainer with a Course</h3>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <!-- Modal-body -->
+                                                    <form>
+                                                        <div class="modal-body">
+
+                                                            <strong>Course's Title:</strong>
+                                                            <input type="text" name="courseTtile" pattern="[a-zA-Z]+" value="Java" required autocomplete="off" />
+                                                            <hr />
+                                                            <strong>Course's Stream:</strong>
+                                                            <select required size="5"class="custom-select">
+                                                                <option>CB-7</option>
+                                                                <option>CB-8</option>
+                                                                <option>CB-9</option>
+                                                                <option>CB-10</option>
+                                                                <option selected>CB-11</option>
+
+                                                            </select>
+                                                            <hr />
+                                                            <strong>Type:</strong>
+                                                            <select required size="2" class="custom-select">
+                                                                <option>Part Time</option>
+                                                                <option selected>Full Time</option>
+                                                            </select>
+                                                            <hr />                              
+                                                            <strong>Existing Trainers (selected in bold):</strong>
+                                                            <select required multiple class="custom-select" size="5">
+                                                                <option selected>Leon Ntokardos</option>
+                                                                <option selected>Aggelos Charisteas</option>
+                                                                <option selected>Anna Banana</option>
+                                                                <option>Kostantina Pavlatou</option>
+                                                                <option>Andreas Fikioris</option>
+
+                                                            </select>
+                                                        </div>
+
+                                                        <!-- Modal footer -->
+                                                        <div class="modal-footer">
+                                                            <h4>Edit a Trainer per Course giving the proper values in the required fields.You can choose more than one Trainer.</h4>
+                                                            <br />
+                                                            <button type="submit" class="btn btn-success">Confirm</button>
+                                                            <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                            <button type="button" class="btn btn-danger"data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="btn btn-danger" data-toggle="modal" data-target="#myDelete">Delete</a>
+                                        <div class="modal" id="myDelete">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <h1 class="modal-title">Delete this Domain</h1>
+
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <h4>You are about to delete this domain which contains Trainers per Courses permanently with its selected values. Are you sure?</h4>
+                                                        <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>                                 
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

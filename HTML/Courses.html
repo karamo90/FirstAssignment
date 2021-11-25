@@ -1,0 +1,535 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="../Libraries/Content/bootstrap.css" rel="stylesheet" />
+    <link href="../CSS/main.css" rel="stylesheet" />
+    <title>Peoplecert Education Bootcamp Training Program</title>
+    <script src="../Libraries/Scripts/jquery-3.0.0.js"></script>
+    <script src="../Libraries/Scripts/bootstrap.js"></script>
+    <script src="../Libraries/Scripts/umd/popper.js"></script>
+
+</head>
+<body>
+    <!--Main Container-->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="justify-content-center mb-0">
+                    <div class="container text-white-50 text-md-center">
+                        <h1><strong>Courses</strong></h1>
+                        <img src="../Assets/images/courses.png" width="100" />
+                        <p><strong>Here you can find and Choose or Edit our Courses</strong></p>
+                    </div>
+
+                </div>
+                <nav class="navbar navbar-expand-sm bg-dark">
+                    <!-- Links -->
+                    <ul class="navbar-nav align-content-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Courses.html">Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Trainers.html">Trainers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Students.html">Students</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Assignments.html">Assignment</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Trainers Per Course.html">Trainers Per Course</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Assignments Per Course.html">Assignments Per Course</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Assignments Per Students-Per Course.html">Assignment Per Course Per Students</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Index.html">Return to Home Screen</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-left">
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+                    Create a new Course
+                </button>
+
+                <!-- The Modal -->
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- Modal-Header -->
+                            <div class="modal-header">
+                                <h1 class="modal-title">Create a New Course</h1>
+
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <form>
+                                <!-- Modal-body -->
+                                <div class="modal-body">
+                                    <strong>Title:</strong>
+                                    <input required type="text" name="titleCourse" placeholder="Course's Title*" pattern="[a-zA-Z-#]+" autocomplete="off" />
+                                    <hr>
+                                    <strong>Stream:</strong>
+                                    <select required size="5"class="custom-select">
+                                        <option value="CB-7">CB-7</option>
+                                        <option value="CB-8">CB-8</option>
+                                        <option value="CB-9">CB-9</option>
+                                        <option value="CB-10">CB-10</option>
+                                        <option value="CB-11">CB-11</option>
+                                    </select>
+                                    <hr />
+                                    <strong>Type:</strong>
+                                    <select required size="2"class="custom-select">
+                                        <option value="Part-Time">Part-Time</option>
+                                        <option value="Full-Time">Full-Time</option>
+                                    </select>
+                                    <hr />
+                                    <strong>Start Date:</strong>
+                                    <input type="date" min="2017-10-08" max="2021-09-10" name="Start Date" required /><br />
+                                    <strong>End Date:</strong>
+                                    <input type="date" min="2018-04-08" max="2021-03-10" name="End Date" required  />
+                                </div>
+
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <h4>Create a Lesson within a validate Date (up to 6 months from the Start Date).</h4>
+                                    <button type="submit" class="btn btn-success">Confirm</button>
+                                    <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Table of Courses -->
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th>TITLE</th>
+                        <th>STREAM</th>
+                        <th>TYPE</th>
+                        <th>START-DATE</th>
+                        <th>END-DATE</th>
+                        <th>CHANGE</th>
+
+                    </tr>
+
+                </thead>
+                <!--Course's Table Assets-->
+                <tbody>
+                    <tr>
+                        <td>Python</td>
+                        <td>CB-11</td>
+                        <td>Full Time</td>
+                        <td>22-2-2020</td>
+                        <td>20-8-2020</td>
+                        <td>
+
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEdit1">
+                                Edit
+                            </button>
+                            <!-- The Modal -->
+                            <div class="modal" id="myEdit1">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+
+                                        <!-- Modal-Header -->
+                                        <div class="modal-header">
+                                            <h1 class="modal-title">Edit Course</h1>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <form>
+                                            <!-- Modal-body -->
+                                            <div class="modal-body">
+                                                <strong>Title:</strong>
+                                                <input required type="text" name="titleCourse" value="Python" Title*" pattern="[a-zA-Z-#]+" autocomplete="off" />
+                                                <hr>
+                                                <strong>Stream:</strong>
+                                                <select required size="5" class="custom-select">
+                                                    <option value="CB-7">CB-7</option>
+                                                    <option value="CB-8">CB-8</option>
+                                                    <option value="CB-9">CB-9</option>
+                                                    <option value="CB-10">CB-10</option>
+                                                    <option selected value="CB-11">CB-11</option>
+                                                </select>
+                                                <hr />
+                                                <strong>Type:</strong>
+                                                <select required size="2" class="custom-select">
+                                                    <option value="Part-Time">Part-Time</option>
+                                                    <option selected value="Full-Time">Full-Time</option>
+                                                </select>
+                                                <hr />
+                                                <strong>Start Date:</strong>
+                                                <input required type="date" min="2017-10-08" max="2021-09-10" name="Start Date" value="2020-02-22" /><br />
+                                                <strong>End Date:</strong>
+                                                <input required type="date" min="2018-04-08" max="2021-03-10" name="End Date" value="2020-08-20" />
+
+                                            </div>
+                                            <!--Modal Footer-->
+                                            <div class="modal-footer">
+                                                <h4>You can edit a Course and choose the new values within the options we offer.</h4>
+                                                <button type="submit" class="btn btn-success">Confirm</button>
+                                                <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a class="btn btn-danger" data-toggle="modal" data-target="#myDelete">Delete</a>
+                            <div class="modal" id="myDelete">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <h1 class="modal-title">Delete this Course</h1>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <h4>You are about to delete this Course permanently with the selected values it contains. Are you sure?</h4>
+                                            <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>Javasript</td>
+                        <td>CB-10</td>
+                        <td>Full Time</td>
+                        <td>22-2-2019</td>
+                        <td>20-7-2019</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEdit2">
+                                Edit
+                            </button>
+                            <!-- The Modal -->
+                            <div class="modal" id="myEdit2">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+
+                                        <!-- Modal-Header -->
+                                        <div class="modal-header">
+                                            <h1 class="modal-title">Edit Course</h1>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+
+                                        <!-- Modal-body -->
+                                        <form>
+                                            <!-- Modal-body -->
+                                            <div class="modal-body">
+                                                <strong>Title:</strong>
+                                                <input required type="text" name="titleCourse" value="Javascript" pattern="[a-zA-Z-#]+" autocomplete="off" />
+                                                <hr>
+                                                <strong>Stream:</strong>
+                                                <select required size="5" class="custom-select">
+                                                    <option value="CB-7">CB-7</option>
+                                                    <option value="CB-8">CB-8</option>
+                                                    <option value="CB-9">CB-9</option>
+                                                    <option selected value="CB-10">CB-10</option>
+                                                    <option value="CB-11">CB-11</option>
+                                                </select>
+                                                <hr />
+                                                <strong>Type:</strong>
+                                                <select required size="2" class="custom-select">
+                                                    <option value="Part-Time">Part-Time</option>
+                                                    <option selected value="Full-Time">Full-Time</option>
+                                                </select>
+                                                <hr />
+                                                <strong>Start Date:</strong>
+                                                <input required type="date" min="2017-10-08" max="2021-09-10" name="Start Date" value="2019-02-22" /><br />
+                                                <strong>End Date:</strong>
+                                                <input required type="date" min="2018-04-08" max="2021-03-10" name="End Date" value="2020-07-20" />
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <h4>You can edit a Course and choose the new values within the options we offer.</h4>
+                                                <button type="submit" class="btn btn-success">Confirm</button>
+                                                <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a class="btn btn-danger" data-toggle="modal" data-target="#myDelete">Delete</a>
+                            <div class="modal" id="myDelete">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-footer">
+                                            <h4>You are about to delete this Course permanently with the selected values it contains. Are you sure?</h4>
+                                            <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>Python</td>
+                        <td>CB-10</td>
+                        <td>Part Time</td>
+                        <td>2-1-2020</td>
+                        <td>20-10-2020</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEdit3">
+                                Edit
+                            </button>
+                            <!-- The Modal -->
+                            <div class="modal" id="myEdit3">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+
+                                        <!-- Modal-Header -->
+                                        <div class="modal-header">
+                                            <h1 class="modal-title">Edit Course</h1>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+
+                                        <!-- Modal-body -->
+                                        <form>
+                                            <!-- Modal-body -->
+                                            <div class="modal-body">
+                                                <strong>Title:</strong>
+                                                <input required type="text" name="titleCourse" value="Python" pattern="[a-zA-Z-#]+" autocomplete="off" />
+                                                <hr>
+                                                <strong>Stream:</strong>
+                                                <select required size="5" class="custom-select">
+                                                    <option value="CB-7">CB-7</option>
+                                                    <option value="CB-8">CB-8</option>
+                                                    <option value="CB-9">CB-9</option>
+                                                    <option selected value="CB-10">CB-10</option>
+                                                    <option value="CB-11">CB-11</option>
+                                                </select>
+                                                <hr />
+                                                <strong>Type:</strong>
+                                                <select required size="2" class="custom-select">
+                                                    <option selected value="Part-Time">Part-Time</option>
+                                                    <option value="Full-Time">Full-Time</option>
+                                                </select>
+                                                <hr />
+                                                <strong>Start Date:</strong>
+                                                <input required type="date" min="2017-10-08" max="2021-09-10" name="Start Date" value="2020-01-02" /><br />
+                                                <strong>End Date:</strong>
+                                                <input required type="date" min="2018-04-08" max="2021-03-10" name="End Date" value="2020-10-20" />
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <h4>You can edit a Course and choose the new values within the options we offer.</h4>
+                                                <button type="submit" class="btn btn-success">Confirm</button>
+                                                <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a class="btn btn-danger" data-toggle="modal" data-target="#myDelete">Delete</a>
+                            <div class="modal" id="myDelete">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-footer">
+                                            <h4>You are about to delete this Course permantely with the selected values it contains. Are you sure?</h4>
+                                            <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>C#</td>
+                        <td>CB-9</td>
+                        <td>Part Time</td>
+                        <td>15-7-2018</td>
+                        <td>20-4-2019</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEdit4">
+                                Edit
+                            </button>
+                            <!-- The Modal -->
+                            <div class="modal" id="myEdit4">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+
+                                        <!-- Modal-Header -->
+                                        <div class="modal-header">
+                                            <h1 class="modal-title">Edit Course</h1>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <form>
+                                            <!-- Modal-body -->
+                                            <div class="modal-body">
+                                                <strong>Title:</strong>
+                                                <input required type="text" name="titleCourse" value="C#" pattern="[a-zA-Z-#]+" autocomplete="off" />
+                                                <hr>
+                                                <strong>Stream:</strong>
+                                                <select required size="5" class="custom-select">
+                                                    <option value="CB-7">CB-7</option>
+                                                    <option value="CB-8">CB-8</option>
+                                                    <option selected value="CB-9">CB-9</option>
+                                                    <option value="CB-10">CB-10</option>
+                                                    <option value="CB-11">CB-11</option>
+                                                </select>
+                                                <hr />
+                                                <strong>Type:</strong>
+                                                <select required size="2" class="custom-select">
+                                                    <option selected value="Part-Time">Part-Time</option>
+                                                    <option value="Full-Time">Full-Time</option>
+                                                </select>
+                                                <hr />
+                                                <strong>Start Date:</strong>
+                                                <input required type="date" min="2017-10-08" max="2021-09-10" name="Start Date" value="2018-07-15" /><br />
+                                                <strong>End Date:</strong>
+                                                <input required type="date" min="2018-04-08" max="2021-03-10" name="End Date" value="2019-04-20" />
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <h4>You can edit a Course and choose the new values within the options we offer.</h4>
+                                                <button type="submit" class="btn btn-success">Confirm</button>
+                                                <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a class="btn btn-danger" data-toggle="modal" data-target="#myDelete">Delete</a>
+                            <div class="modal" id="myDelete">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-footer">
+                                            <h4>You are about to delete this Course permantely with the selected values it contains. Are you sure?</h4>
+                                            <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Java</td>
+                        <td>CB-11</td>
+                        <td>Full Time</td>
+                        <td>2-9-2020</td>
+                        <td>10-3-2021</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEdit5">
+                                Edit
+                            </button>
+                            <!-- The Modal -->
+                            <div class="modal" id="myEdit5">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+
+                                        <!-- Modal-Header -->
+                                        <div class="modal-header">
+                                            <h1 class="modal-title">Edit Course</h1>
+
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <form>
+                                            <!-- Modal-body -->
+                                            <div class="modal-body">
+                                                <strong>Title:</strong>
+                                                <input required type="text" name="titleCourse" value="Java" pattern="[a-zA-Z-#]+" autocomplete="off" />
+                                                <hr>
+                                                <strong>Stream:</strong>
+                                                <select required size="5" class="custom-select">
+                                                    <option value="CB-7">CB-7</option>
+                                                    <option value="CB-8">CB-8</option>
+                                                    <option selected value="CB-9">CB-9</option>
+                                                    <option value="CB-10">CB-10</option>
+                                                    <option value="CB-11">CB-11</option>
+                                                </select>
+                                                <hr />
+                                                <strong>Type:</strong>
+                                                <select required size="2" class="custom-select">
+                                                    <option value="Part-Time">Part-Time</option>
+                                                    <option selected value="Full-Time">Full-Time</option>
+                                                </select>
+                                                <hr />
+                                                <strong>Start Date:</strong>
+                                                <input required type="date" min="2017-10-08" max="2021-09-10" name="Start Date" value="2020-09-02" /><br />
+                                                <strong>End Date:</strong>
+                                                <input required type="date" min="2018-04-08" max="2021-03-10" name="End Date" value="2021-03-10" />
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <h4>You can edit a Course and choose the new values within the options we offer.</h4>
+                                                <button type="submit" class="btn btn-success">Confirm</button>
+                                                <button type="reset" class="btn btn-light" data-ng-repeat="modal">Reset</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                            </div>
+
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a class="btn btn-danger" data-toggle="modal" data-target="#myDelete">Delete</a>
+                            <div class="modal" id="myDelete">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-footer">
+                                            <h4>You are about to delete this Course permantely with the selected values it contains. Are you sure?</h4>
+                                            <button type="submit" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
