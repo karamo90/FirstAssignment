@@ -7,6 +7,6 @@ classes,Tables,Headers.
 
 I hope you enjoy this Assignment as there will be many more in the future!
 
-
+*The libraries of Bootstrap are not included
 
 Christos Karamolegkos..
